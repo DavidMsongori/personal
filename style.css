@@ -552,26 +552,18 @@ nav ul li a.active{
 }
 
 .about-video{
-    width:100%;
+
+    position:relative;
 
 }
-.about-video video{
-    height:500px;
-    width:100%;
-    object-fit:cover;
-    border-radius: 20px;
-    box-shadow:var(--shadow);
-    display:block;
-}
 
-
-/*.about-video img{
+.about-video img{
 
     border-radius:20px;
 
     box-shadow:var(--shadow);
 
-}*/
+}
 
 .play-button{
 

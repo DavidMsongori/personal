@@ -404,7 +404,7 @@ nav ul li a.active{
 
     transform:translateX(-50%);
 
-    animation:rotateCircle 20s linear infinite;
+    /*animation:rotateCircle 20s linear infinite;*/
 
 }
 

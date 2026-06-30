@@ -1,6 +1,6 @@
-/*======================================
-            HERO SECTION
-=======================================*/
+/*=====================================
+            HERO
+======================================*/
 
 .hero{
 
@@ -14,12 +14,12 @@
 
     overflow:hidden;
 
-    background:linear-gradient(
-        135deg,
-        #08192d 0%,
-        #0A2342 50%,
-        #102f54 100%
-    );
+    background:
+    linear-gradient(
+    135deg,
+    #07192f,
+    #0A2342,
+    #12385f);
 
 }
 
@@ -32,7 +32,7 @@
     background:
     radial-gradient(circle at top right,
     rgba(212,175,55,.08),
-    transparent 45%);
+    transparent 40%);
 
 }
 
@@ -44,7 +44,7 @@
 
     align-items:center;
 
-    gap:70px;
+    gap:80px;
 
     position:relative;
 
@@ -58,216 +58,173 @@
 
 }
 
-.hero-tag{
+.hero-welcome{
 
-    color:#D4AF37;
+    color:var(--gold);
 
     letter-spacing:3px;
 
+    font-weight:600;
+
     margin-bottom:20px;
+
+}
+
+.hero-title{
+
+    font-family:var(--heading);
+
+    font-size:82px;
+
+    line-height:1.05;
+
+    margin-bottom:20px;
+
+}
+
+.hero-title span{
+
+    color:var(--gold);
+
+}
+
+.hero-role{
+
+    font-size:25px;
 
     font-weight:600;
 
-}
-
-.hero h1{
-
-    font-size:75px;
-
-    line-height:1.1;
-
-    margin-bottom:20px;
-
-}
-
-.hero h1 span{
-
-    color:#D4AF37;
-
-}
-
-.hero h3{
-
-    font-size:28px;
-
     color:#ddd;
 
-    margin-bottom:25px;
+    margin-bottom:30px;
 
 }
 
-.hero-description{
+.hero-text{
 
-    max-width:620px;
-
-    font-size:18px;
-
-    color:#ccc;
-
-    margin-bottom:40px;
+    max-width:600px;
 
     line-height:1.8;
 
+    color:#ddd;
+
+    margin-bottom:45px;
+
 }
-/* Buttons */
 
 .hero-buttons{
 
-    display:flex;
+display:flex;
 
-    gap:18px;
+gap:20px;
 
-    flex-wrap:wrap;
-
-    margin-bottom:40px;
+margin-bottom:40px;
 
 }
 
 .btn-primary{
 
-    padding:15px 35px;
+background:var(--gold);
 
-    background:#D4AF37;
+color:#000;
 
-    color:#000;
+padding:16px 38px;
 
-    border-radius:40px;
+border-radius:40px;
 
-    font-weight:600;
+font-weight:600;
 
-    transition:.4s;
+transition:.35s;
 
 }
 
 .btn-primary:hover{
 
-    background:white;
+transform:translateY(-5px);
 
 }
 
 .btn-secondary{
 
-    padding:15px 35px;
+padding:16px 38px;
 
-    border:2px solid #D4AF37;
+border:2px solid var(--gold);
 
-    color:white;
+color:white;
 
-    border-radius:40px;
+border-radius:40px;
 
-    transition:.4s;
+transition:.35s;
 
 }
 
 .btn-secondary:hover{
 
-    background:#D4AF37;
+background:var(--gold);
 
-    color:#000;
+color:black;
 
 }
 
-/* Social Icons */
-
 .hero-social{
 
-    display:flex;
+display:flex;
 
-    gap:18px;
+gap:18px;
 
 }
 
 .hero-social a{
 
-    width:48px;
+width:48px;
 
-    height:48px;
+height:48px;
 
-    border-radius:50%;
+display:flex;
 
-    background:rgba(255,255,255,.08);
+justify-content:center;
 
-    color:white;
+align-items:center;
 
-    display:flex;
+background:rgba(255,255,255,.08);
 
-    justify-content:center;
+border-radius:50%;
 
-    align-items:center;
+color:white;
 
-    transition:.35s;
+transition:.3s;
 
 }
 
 .hero-social a:hover{
 
-    background:#D4AF37;
+background:var(--gold);
 
-    color:#000;
+color:black;
 
 }
 
-/* Potrait */
-
 .hero-image{
 
-    position:relative;
+position:relative;
 
-    text-align:center;
+display:flex;
+
+justify-content:center;
 
 }
 
 .hero-image img{
 
-    width:520px;
+width:540px;
 
-    animation:float 4s ease-in-out infinite;
+max-width:100%;
 
-}
+animation:float 5s ease-in-out infinite;
 
-/* Floating Cards */
-
-.floating-card{
-
-    position:absolute;
-
-    padding:20px 30px;
-
-    border-radius:20px;
-
-    backdrop-filter:blur(15px);
-
-    background:rgba(255,255,255,.15);
-
-    color:white;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.25));
 
 }
-
-.card-one{
-
-    top:100px;
-
-    left:-30px;
-
-}
-
-.card-two{
-
-    bottom:60px;
-
-    right:-10px;
-
-}
-
-.floating-card h2{
-
-    color:#D4AF37;
-
-}
-
-/* Animation */
 
 @keyframes float{
 
@@ -279,7 +236,7 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-18px);
+transform:translateY(-20px);
 
 }
 
@@ -291,9 +248,15 @@ transform:translateY(0);
 
 }
 
-/* Responsive */ 
-
 @media(max-width:992px){
+
+.hero{
+
+padding:150px 0 80px;
+
+min-height:auto;
+
+}
 
 .hero-container{
 
@@ -303,21 +266,23 @@ text-align:center;
 
 }
 
-.hero h1{
+.hero-title{
 
 font-size:55px;
 
 }
 
-.hero-image img{
+.hero-role{
 
-width:360px;
+font-size:20px;
 
 }
 
 .hero-buttons{
 
 justify-content:center;
+
+flex-wrap:wrap;
 
 }
 
@@ -327,45 +292,31 @@ justify-content:center;
 
 }
 
-.card-one{
+.hero-image{
 
-left:0;
-
-}
-
-.card-two{
-
-right:0;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.hero{
-
-padding:140px 0 80px;
-
-min-height:auto;
-
-}
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-.hero h3{
-
-font-size:20px;
+margin-top:50px;
 
 }
 
 .hero-image img{
 
-width:300px;
+width:330px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-title{
+
+font-size:42px;
+
+}
+
+.hero-role{
+
+font-size:18px;
 
 }
 
@@ -383,10 +334,5 @@ text-align:center;
 
 }
 
-.floating-card{
-
-display:none;
-
 }
 
-}

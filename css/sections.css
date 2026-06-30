@@ -1067,3 +1067,56 @@ text-align:center;
     margin-top:60px;
 
 }
+
+/*======================================
+        PAGE HERO
+======================================*/
+
+.page-hero{
+
+padding:180px 0 120px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#08192D,
+
+#0A2342,
+
+#12385f
+
+);
+
+text-align:center;
+
+color:white;
+
+}
+
+.page-hero h1{
+
+font-family:var(--heading);
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+.page-hero p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+

@@ -336,6 +336,16 @@ const menuToggle = document.querySelector(".menu-toggle");
 
 const nav = document.querySelector("nav");
 
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+const nav = document.querySelector("nav");
+
 const icon = menuToggle.querySelector("i");
 
 menuToggle.addEventListener("click", () => {

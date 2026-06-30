@@ -1,1 +1,33 @@
+:root{
 
+    /* Colors */
+
+    --primary:#0A2342;
+
+    --secondary:#102F54;
+
+    --gold:#D4AF37;
+
+    --white:#FFFFFF;
+
+    --light:#F8F9FA;
+
+    --text:#555555;
+
+    --dark:#08192D;
+
+    /* Fonts */
+
+    --heading:'Playfair Display', serif;
+
+    --body:'Poppins', sans-serif;
+
+    /* Shadows */
+
+    --shadow:0 15px 35px rgba(0,0,0,.12);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}

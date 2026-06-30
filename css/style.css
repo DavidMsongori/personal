@@ -3411,4 +3411,122 @@ ABOUT HERO
 
 }
 
+/*==========================================================
+MY STORY
+==========================================================*/
+
+.my-story{
+
+    background:#fff;
+
+}
+
+.story-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.story-image{
+
+    position:relative;
+
+}
+
+.story-image img{
+
+    width:100%;
+
+    border-radius:28px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.experience-card{
+
+    position:absolute;
+
+    bottom:-35px;
+
+    right:-25px;
+
+    width:220px;
+
+    background:var(--accent);
+
+    color:#111;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.experience-card h2{
+
+    font-size:52px;
+
+    margin-bottom:10px;
+
+    color:#111;
+
+}
+
+.experience-card p{
+
+    color:#111;
+
+    line-height:1.5;
+
+    margin:0;
+
+}
+
+.story-content p{
+
+    margin-bottom:25px;
+
+}
+
+.story-signature{
+
+    margin-top:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.story-signature img{
+
+    width:150px;
+
+}
+
+.story-signature h4{
+
+    margin-bottom:5px;
+
+    color:var(--primary);
+
+}
+
+.story-signature span{
+
+    color:var(--gray);
+
+}
+
 

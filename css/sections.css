@@ -1068,81 +1068,185 @@ text-align:center;
 
 }
 
-/*======================================
-        PAGE HERO
-======================================*/
+/*====================================
+        ABOUT HERO
+====================================*/
 
-.page-hero{
+.about-hero{
 
-padding:180px 0 120px;
+    min-height:100vh;
 
-background:
+    display:flex;
 
-linear-gradient(
+    align-items:center;
 
-135deg,
+    background:linear-gradient(135deg,#08192D,#0A2342,#12385f);
 
-#08192D,
+    overflow:hidden;
 
-#0A2342,
+    position:relative;
 
-#12385f
+}
 
-);
+.about-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    background:rgba(212,175,55,.08);
+
+    border-radius:50%;
+
+    top:-120px;
+
+    right:-120px;
+
+}
+
+.about-hero-container{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.about-hero-content{
+
+    color:white;
+
+}
+
+.page-tag{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+
+    font-weight:600;
+
+}
+
+.about-hero-content h1{
+
+    font-family:var(--heading);
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin:25px 0;
+
+}
+
+.about-hero-content p{
+
+    color:#ddd;
+
+    line-height:1.9;
+
+    max-width:650px;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.breadcrumb a{
+
+    color:var(--gold);
+
+}
+
+.breadcrumb span{
+
+    color:#ddd;
+
+}
+
+.about-hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about-hero-image img{
+
+    width:500px;
+
+    max-width:100%;
+
+    filter:drop-shadow(0 25px 45px rgba(0,0,0,.35));
+
+}
+
+@media(max-width:992px){
+
+.about-hero{
+
+padding:150px 0 80px;
+
+min-height:auto;
+
+}
+
+.about-hero-container{
+
+grid-template-columns:1fr;
 
 text-align:center;
 
-color:white;
+}
+
+.about-hero-content h1{
+
+font-size:48px;
 
 }
 
-.page-hero h1{
+.about-hero-image{
 
-font-family:var(--heading);
-
-font-size:70px;
-
-margin-bottom:20px;
+margin-top:40px;
 
 }
 
-.page-hero p{
+.about-hero-image img{
 
-max-width:700px;
-
-margin:auto;
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#ddd;
+width:320px;
 
 }
 
-.about-page{
+.breadcrumb{
 
-padding:100px 0;
-
-}
-
-.about-page-grid{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:80px;
-
-align-items:center;
+justify-content:center;
 
 }
-
-.about-page img{
-
-border-radius:25px;
-
-box-shadow:var(--shadow);
 
 }
 

@@ -1,1 +1,55 @@
+*{
 
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--body);
+
+    background:#fff;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 0;
+
+}

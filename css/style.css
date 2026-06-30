@@ -1829,3 +1829,524 @@ textarea:focus{
 
 }
 
+/*==========================================================
+31. NEWS
+==========================================================*/
+
+.news{
+
+    background:var(--light);
+
+}
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.news-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.news-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.news-card img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.news-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.news-content{
+
+    padding:30px;
+
+}
+
+.news-date{
+
+    display:inline-block;
+
+    color:var(--accent);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+}
+
+.news-content h3{
+
+    margin-bottom:15px;
+
+    font-size:28px;
+
+}
+
+.news-content p{
+
+    margin-bottom:25px;
+
+}
+
+.news-content a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--accent);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.news-content a:hover{
+
+    gap:16px;
+
+}
+
+
+
+/*==========================================================
+32. NEWSLETTER
+==========================================================*/
+
+.newsletter{
+
+    background:white;
+
+    text-align:center;
+
+}
+
+.newsletter-form{
+
+    max-width:750px;
+
+    margin:60px auto;
+
+    display:flex;
+
+    border-radius:60px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.newsletter-form input{
+
+    flex:1;
+
+    border:none;
+
+    padding:22px 28px;
+
+    font-size:16px;
+
+}
+
+.newsletter-form button{
+
+    background:var(--accent);
+
+    color:#111;
+
+    padding:0 45px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.newsletter-form button:hover{
+
+    background:#c79f28;
+
+}
+
+.newsletter-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+}
+
+.newsletter-social a{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+}
+
+.newsletter-social a:hover{
+
+    background:var(--accent);
+
+    color:#111;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==========================================================
+33. FOOTER
+==========================================================*/
+
+.footer{
+
+    background:#08192D;
+
+    color:white;
+
+    padding:90px 0 30px;
+
+}
+
+.footer-top{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.footer-brand img{
+
+    width:90px;
+
+    margin:auto auto 25px;
+
+}
+
+.footer-brand h2{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.footer-brand p{
+
+    color:#cfcfcf;
+
+    margin-bottom:20px;
+
+}
+
+.footer-signature{
+
+    color:var(--accent);
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.footer-brand span{
+
+    color:#bdbdbd;
+
+    font-style:italic;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:45px;
+
+    margin-bottom:60px;
+
+}
+
+.footer-column h3{
+
+    color:var(--accent);
+
+    margin-bottom:25px;
+
+}
+
+.footer-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.footer-column a{
+
+    color:#ddd;
+
+    margin-bottom:14px;
+
+    transition:.3s;
+
+}
+
+.footer-column a:hover{
+
+    color:var(--accent);
+
+    padding-left:8px;
+
+}
+
+.footer-column i{
+
+    width:22px;
+
+}
+
+.footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.footer-social a{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--accent);
+
+    color:#111;
+
+}
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    padding-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.footer-bottom p{
+
+    color:#bfbfbf;
+
+}
+
+
+
+/*==========================================================
+34. SCROLL TO TOP
+==========================================================*/
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#111;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/*==========================================================
+35. PAGE LOADER
+==========================================================*/
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loader::after{
+
+    content:"";
+
+    width:60px;
+
+    height:60px;
+
+    border:6px solid #eee;
+
+    border-top:6px solid var(--accent);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/*==========================================================
+36. IMAGE HOVER
+==========================================================*/
+
+img{
+
+    transition:.4s;
+
+}
+
+.project-card:hover img,
+.news-card:hover img{
+
+    transform:scale(1.08);
+
+}
+

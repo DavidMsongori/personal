@@ -3307,3 +3307,108 @@ Small Phones
 
 }
 
+/*==========================================================
+ABOUT HERO
+==========================================================*/
+
+.about-hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #08192D,
+        #0A2342,
+        #12385F
+    );
+
+}
+
+.about-hero-container{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:80px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.about-hero-content{
+
+    animation:fadeLeft 1s ease;
+
+}
+
+.about-hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    animation:fadeRight 1s ease;
+
+}
+
+.about-hero-image img{
+
+    width:480px;
+
+    max-width:100%;
+
+    animation:float 6s ease-in-out infinite;
+
+    filter:drop-shadow(0 30px 45px rgba(0,0,0,.35));
+
+}
+
+.breadcrumb{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:40px;
+
+    color:#ddd;
+
+}
+
+.breadcrumb a{
+
+    color:var(--accent);
+
+    transition:.3s;
+
+}
+
+.breadcrumb a:hover{
+
+    color:white;
+
+}
+
+.breadcrumb i{
+
+    font-size:12px;
+
+}
+
+

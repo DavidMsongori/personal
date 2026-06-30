@@ -3169,6 +3169,11 @@ section{
 
 }
 
+.impact-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
 
 /*==========================
 Mobile
@@ -3309,6 +3314,12 @@ section{
 .vision-card{
 
     padding:35px 25px;
+
+}
+
+.impact-grid{
+
+    grid-template-columns:1fr;
 
 }
 /*==========================
@@ -3924,3 +3935,98 @@ VISION • MISSION • VALUES
     border-bottom:none;
 
 }
+
+/*==========================================================
+AREAS OF IMPACT
+==========================================================*/
+
+.impact{
+
+    background:#fff;
+
+}
+
+.impact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.impact-card{
+
+    background:#fff;
+
+    padding:40px 35px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    border-top:5px solid transparent;
+
+}
+
+.impact-card:hover{
+
+    transform:translateY(-12px);
+
+    border-top:5px solid var(--accent);
+
+}
+
+.impact-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(212,175,55,.12);
+
+    color:var(--accent);
+
+    font-size:34px;
+
+    transition:.35s;
+
+}
+
+.impact-card:hover .impact-icon{
+
+    transform:rotate(12deg) scale(1.08);
+
+}
+
+.impact-card h3{
+
+    margin-bottom:18px;
+
+    color:var(--primary);
+
+}
+
+.impact-card p{
+
+    margin:0;
+
+}
+

@@ -331,3 +331,43 @@ window.addEventListener("load", () => {
 
 document.body.style.opacity = "0";
 document.body.style.transition = "opacity .5s ease";
+
+const menuToggle = document.querySelector(".menu-toggle");
+
+const nav = document.querySelector("nav");
+
+const icon = menuToggle.querySelector("i");
+
+menuToggle.addEventListener("click", () => {
+
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+
+        icon.classList.remove("fa-bars");
+
+        icon.classList.add("fa-times");
+
+    }else{
+
+        icon.classList.remove("fa-times");
+
+        icon.classList.add("fa-bars");
+
+    }
+
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        nav.classList.remove("active");
+
+        icon.classList.remove("fa-times");
+
+        icon.classList.add("fa-bars");
+
+    });
+
+});

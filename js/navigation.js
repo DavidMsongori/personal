@@ -1,89 +1,47 @@
-/*========================================
-    DAVID MSONGORI WEBSITE
-    NAVIGATION
-=========================================*/
+document.addEventListener("DOMContentLoaded",()=>{
 
-document.addEventListener("DOMContentLoaded", () => {
+const header=document.querySelector(".header");
 
-    const header = document.querySelector(".header");
-    const hamburger = document.querySelector(".hamburger");
-    const navbar = document.querySelector(".navbar");
-    const navLinks = document.querySelectorAll(".nav-links a");
+const hamburger=document.querySelector(".hamburger");
 
-    /*-------------------------
-        Sticky Header
-    --------------------------*/
+const navbar=document.querySelector(".navbar");
 
-    window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-        if(window.scrollY > 80){
+if(window.scrollY>60){
 
-            header.classList.add("sticky");
+header.classList.add("scrolled");
 
-        }else{
+}else{
 
-            header.classList.remove("sticky");
+header.classList.remove("scrolled");
 
-        }
+}
 
-    });
+});
 
-    /*-------------------------
-        Mobile Menu
-    --------------------------*/
+hamburger.addEventListener("click",()=>{
 
-    hamburger.addEventListener("click", () => {
+hamburger.classList.toggle("active");
 
-        hamburger.classList.toggle("active");
+navbar.classList.toggle("active");
 
-        navbar.classList.toggle("active");
+document.body.classList.toggle("menu-open");
 
-        document.body.classList.toggle("menu-open");
+});
 
-    });
+document.querySelectorAll(".nav-links a").forEach(link=>{
 
-    /*-------------------------
-        Close Menu on Click
-    --------------------------*/
+link.addEventListener("click",()=>{
 
-    navLinks.forEach(link=>{
+navbar.classList.remove("active");
 
-        link.addEventListener("click",()=>{
+hamburger.classList.remove("active");
 
-            navbar.classList.remove("active");
+document.body.classList.remove("menu-open");
 
-            hamburger.classList.remove("active");
+});
 
-            document.body.classList.remove("menu-open");
-
-        });
-
-    });
-
-    /*-------------------------
-        Close if Click Outside
-    --------------------------*/
-
-    document.addEventListener("click",(e)=>{
-
-        if(
-
-            !navbar.contains(e.target)
-
-            &&
-
-            !hamburger.contains(e.target)
-
-        ){
-
-            navbar.classList.remove("active");
-
-            hamburger.classList.remove("active");
-
-            document.body.classList.remove("menu-open");
-
-        }
-
-    });
+});
 
 });

@@ -969,3 +969,101 @@ text-align:center;
 }
 
 }
+
+/*=====================================
+            NEWS
+======================================*/
+
+.news{
+
+    background:#f7f9fc;
+
+}
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+    gap:35px;
+
+    margin-top:60px;
+
+}
+
+.news-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.news-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.news-card img{
+
+    height:240px;
+
+    object-fit:cover;
+
+}
+
+.news-content{
+
+    padding:30px;
+
+}
+
+.news-date{
+
+    color:var(--gold);
+
+    font-weight:600;
+
+    font-size:14px;
+
+}
+
+.news-content h3{
+
+    margin:18px 0;
+
+    color:var(--primary);
+
+}
+
+.news-content p{
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.news-content a{
+
+    color:var(--gold);
+
+    font-weight:600;
+
+}
+
+.news-button{
+
+    text-align:center;
+
+    margin-top:60px;
+
+}

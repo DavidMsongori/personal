@@ -1049,6 +1049,57 @@ textarea:focus{
     box-shadow:var(--shadow-lg);
 
 }
+/*==========================================================
+ABOUT READ BUTTON
+==========================================================*/
+
+.about-read-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:18px 34px;
+
+    margin-top:35px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.about-read-btn i{
+
+    transition:.35s;
+
+}
+
+.about-read-btn:hover{
+
+    background:var(--accent);
+
+    color:#111;
+
+    transform:translateY(-5px);
+
+}
+
+.about-read-btn:hover i{
+
+    transform:translateX(8px);
+
+}
 
 
 

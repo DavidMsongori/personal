@@ -1,13 +1,10 @@
-/*==========================
-        HERO ANIMATION
-==========================*/
-
 document.addEventListener("DOMContentLoaded",()=>{
 
 const hero=document.querySelector(".hero-content");
 
 hero.style.opacity="0";
-hero.style.transform="translateY(40px)";
+
+hero.style.transform="translateY(30px)";
 
 setTimeout(()=>{
 

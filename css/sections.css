@@ -140,3 +140,139 @@ font-size:36px;
 }
 
 }
+
+/*====================================
+        FEATURED IN
+====================================*/
+
+.featured{
+
+    background:#fff;
+
+    padding:70px 0;
+
+    overflow:hidden;
+
+}
+
+.featured-title{
+
+    text-align:center;
+
+    font-family:var(--heading);
+
+    color:var(--primary);
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+    position:relative;
+
+}
+
+.featured-title::after{
+
+    content:"";
+
+    width:80px;
+
+    height:3px;
+
+    background:var(--gold);
+
+    display:block;
+
+    margin:15px auto 0;
+
+}
+
+.logo-slider{
+
+    overflow:hidden;
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.logo-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:80px;
+
+    width:max-content;
+
+    animation:scroll 35s linear infinite;
+
+}
+
+.logo-track img{
+
+    height:55px;
+
+    width:auto;
+
+    object-fit:contain;
+
+    transition:.3s;
+
+    filter:grayscale(100%);
+
+    opacity:.7;
+
+}
+
+.logo-track img:hover{
+
+    filter:none;
+
+    opacity:1;
+
+    transform:scale(1.08);
+
+}
+
+.logo-slider:hover .logo-track{
+
+    animation-play-state:paused;
+
+}
+
+@keyframes scroll{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.logo-track{
+
+gap:45px;
+
+animation-duration:25s;
+
+}
+
+.logo-track img{
+
+height:40px;
+
+}
+
+}

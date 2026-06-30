@@ -520,3 +520,477 @@ textarea:focus{
 
 }
 
+/*==========================================================
+10. HEADER
+==========================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    transition:.4s ease;
+
+}
+
+.header.scrolled{
+
+    background:rgba(8,25,45,.97);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+
+}
+
+.nav-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:85px;
+
+}
+
+
+
+/*==========================================================
+11. LOGO
+==========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.15);
+
+}
+
+.logo span{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+
+
+/*==========================================================
+12. NAVIGATION
+==========================================================*/
+
+.navbar{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:32px;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-links a{
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--accent);
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links a.active::after{
+
+    width:100%;
+
+}
+
+.nav-links a:hover,
+
+.nav-links a.active{
+
+    color:var(--accent);
+
+}
+
+
+
+/*==========================================================
+13. NAV BUTTON
+==========================================================*/
+
+.nav-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    background:var(--accent);
+
+    color:#111;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/*==========================================================
+14. HAMBURGER
+==========================================================*/
+
+.hamburger{
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:6px;
+
+    cursor:pointer;
+
+}
+
+.hamburger span{
+
+    width:28px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.hamburger.active span:nth-child(1){
+
+    transform:rotate(45deg) translate(6px,6px);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+    transform:rotate(-45deg) translate(7px,-7px);
+
+}
+
+
+
+/*==========================================================
+15. HERO
+==========================================================*/
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #08192D 0%,
+
+        #0A2342 50%,
+
+        #12385F 100%
+
+    );
+
+    overflow:hidden;
+
+}
+
+
+
+/*==========================================================
+16. HERO OVERLAY
+==========================================================*/
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+        circle at top right,
+
+        rgba(212,175,55,.08),
+
+        transparent 45%
+
+    ),
+
+    radial-gradient(
+
+        circle at bottom left,
+
+        rgba(255,255,255,.05),
+
+        transparent 35%
+
+    );
+
+}
+
+
+
+/*==========================================================
+17. HERO CONTAINER
+==========================================================*/
+
+.hero-container{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:80px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+/*==========================================================
+18. HERO CONTENT
+==========================================================*/
+
+.hero-content{
+
+    animation:fadeLeft 1s ease;
+
+}
+
+.hero-welcome{
+
+    color:var(--accent);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+
+    text-transform:uppercase;
+
+}
+
+.hero-role{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:500;
+
+    margin:20px 0;
+
+}
+
+.hero-text{
+
+    max-width:620px;
+
+    color:#d9d9d9;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-bottom:45px;
+
+}
+
+
+
+/*==========================================================
+19. HERO SOCIAL
+==========================================================*/
+
+.hero-social{
+
+    display:flex;
+
+    gap:16px;
+
+}
+
+.hero-social a{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+.hero-social a:hover{
+
+    background:var(--accent);
+
+    color:#111;
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==========================================================
+20. HERO IMAGE
+==========================================================*/
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    animation:fadeRight 1s ease;
+
+}
+
+.hero-image img{
+
+    width:520px;
+
+    max-width:100%;
+
+    filter:drop-shadow(0 30px 45px rgba(0,0,0,.35));
+
+    animation:float 6s ease-in-out infinite;
+
+}
+

@@ -1205,6 +1205,8 @@ VIDEO PROFILE CARD
     justify-content:center;
 
 }
+        
+}
 
 /*==========================================================
 ABOUT READ BUTTON
@@ -1935,8 +1937,6 @@ ABOUT READ BUTTON
 
 }
 
-.cta-buttons{
-
 /* CTA ACTIONS */
 
 .cta-actions{
@@ -2092,8 +2092,6 @@ ABOUT READ BUTTON
 .cta-btn{
 
     padding:18px;
-
-}
 
 }
 

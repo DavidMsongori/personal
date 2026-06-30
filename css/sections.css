@@ -839,6 +839,99 @@ font-size:42px;
 
 }
 
+            /*====================================
+        CONTACT CARDS
+====================================*/
+
+.contact-cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+margin-top:60px;
+
+}
+
+.contact-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:25px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+color:white;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-6px);
+
+background:rgba(212,175,55,.15);
+
+}
+
+.contact-card i{
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:var(--gold);
+
+color:#000;
+
+font-size:24px;
+
+}
+
+.contact-card h4{
+
+margin-bottom:5px;
+
+}
+
+.contact-card span{
+
+color:#ddd;
+
+font-size:15px;
+
+}
+@media(max-width:768px){
+
+.contact-cards{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
 .cta-buttons{
 
 justify-content:center;

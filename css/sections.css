@@ -1120,3 +1120,29 @@ color:#ddd;
 
 }
 
+.about-page{
+
+padding:100px 0;
+
+}
+
+.about-page-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.about-page img{
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+}
+

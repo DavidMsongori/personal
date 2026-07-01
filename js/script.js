@@ -841,6 +841,109 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
 });
- 
+
+ /*==========================================
+DARK MODE
+==========================================*/
+
+const themeButton = document.createElement("button");
+
+themeButton.className = "theme-toggle";
+
+themeButton.innerHTML = '<i class="fas fa-moon"></i>';
+
+document.body.appendChild(themeButton);
+
+const currentTheme = localStorage.getItem("theme");
+
+if(currentTheme==="dark"){
+
+    document.body.classList.add("dark");
+
+    themeButton.innerHTML='<i class="fas fa-sun"></i>';
+
+}
+
+themeButton.addEventListener("click",()=>{
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("theme","dark");
+
+        themeButton.innerHTML='<i class="fas fa-sun"></i>';
+
+    }else{
+
+        localStorage.setItem("theme","light");
+
+        themeButton.innerHTML='<i class="fas fa-moon"></i>';
+
+    }
+
+});
+
+
+
+/*==========================================
+READING PROGRESS BAR
+==========================================*/
+
+const progress=document.createElement("div");
+
+progress.className="reading-progress";
+
+document.body.appendChild(progress);
+
+window.addEventListener("scroll",()=>{
+
+    const totalHeight=document.documentElement.scrollHeight-window.innerHeight;
+
+    const progressHeight=(window.pageYOffset/totalHeight)*100;
+
+    progress.style.width=progressHeight+"%";
+
+});
+
+
+
+/*==========================================
+PAGE LOADER
+==========================================*/
+
+window.addEventListener("load",()=>{
+
+    const loader=document.querySelector(".page-loader");
+
+    if(loader){
+
+        loader.classList.add("hide");
+
+        setTimeout(()=>{
+
+            loader.remove();
+
+        },500);
+
+    }
+
+});
+
+
+
+/*==========================================
+IMAGE FADE-IN
+==========================================*/
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.addEventListener("load",()=>{
+
+        img.classList.add("loaded");
+
+    });
+
+});
 });
 

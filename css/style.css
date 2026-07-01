@@ -3042,15 +3042,25 @@ section{
 }
 
 
-/* Navigation */
+/*==========================
+MOBILE NAVIGATION
+==========================*/
 
 .hamburger{
 
     display:flex;
 
+    z-index:1002;
+
 }
 
-.nav-links{
+.nav-btn{
+
+    display:none;
+
+}
+
+.navbar{
 
     position:fixed;
 
@@ -3064,6 +3074,24 @@ section{
 
     background:#08192D;
 
+    transition:.4s;
+
+    box-shadow:-10px 0 25px rgba(0,0,0,.2);
+
+    z-index:1001;
+
+}
+
+.navbar.active{
+
+    right:0;
+
+}
+
+.nav-links{
+
+    display:flex;
+
     flex-direction:column;
 
     justify-content:flex-start;
@@ -3074,25 +3102,7 @@ section{
 
     gap:28px;
 
-    transition:.4s;
-
-    box-shadow:-10px 0 25px rgba(0,0,0,.2);
-
 }
-
-.nav-links.active{
-
-    right:0;
-
-}
-
-.nav-btn{
-
-    display:none;
-
-}
-
-
 /* Hero */
 
 .hero-container{

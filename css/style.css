@@ -4030,3 +4030,55 @@ AREAS OF IMPACT
 
 }
 
+/*==========================================================
+GALLERY PREVIEW
+==========================================================*/
+
+.gallery-preview{
+
+    background:var(--light);
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:60px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.05);
+
+}
+
+.gallery-button{
+
+    text-align:center;
+
+    margin-top:50px;
+
+}
+

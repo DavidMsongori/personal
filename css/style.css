@@ -4754,3 +4754,11 @@ margin-bottom:10px;
 }
 
 }
+
+/* Prevent scrolling when mobile menu is open */
+
+body.menu-open{
+
+    overflow:hidden;
+
+}

@@ -995,6 +995,40 @@ textarea:focus{
 }
 
 /*==========================================================
+FLOATING IMAGE
+==========================================================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-image img,
+
+.about-hero-image img{
+
+    animation:float 6s ease-in-out infinite;
+
+}
+
+/*==========================================================
 21. ABOUT SECTION
 ==========================================================*/
 
@@ -4762,3 +4796,31 @@ body.menu-open{
     overflow:hidden;
 
 }
+
+/*==========================================================
+SCROLL REVEAL
+==========================================================*/
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+

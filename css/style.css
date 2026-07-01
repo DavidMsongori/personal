@@ -2877,7 +2877,21 @@ img{
 /*==========================================================
 41. RESPONSIVE
 ==========================================================*/
+@keyframes galleryScroll{
 
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
 
 /*==========================
 Large Laptop
@@ -3181,6 +3195,14 @@ section{
 
 }
 
+.gallery-track img{
+
+    width:300px;
+
+    height:220px;
+
+}
+
 /*==========================
 Mobile
 ==========================*/
@@ -3344,6 +3366,20 @@ section{
 .about-cta-buttons{
 
     flex-direction:column;
+
+}
+
+.gallery-track{
+
+    gap:18px;
+
+}
+
+.gallery-track img{
+
+    width:250px;
+
+    height:180px;
 
 }
 /*==========================
@@ -4062,23 +4098,41 @@ GALLERY PREVIEW
 
     background:var(--light);
 
+    overflow:hidden;
+
 }
 
-.gallery-grid{
+.gallery-slider{
 
-    display:grid;
+    width:100%;
 
-    grid-template-columns:repeat(3,1fr);
+    overflow:hidden;
+
+    margin:70px 0;
+
+}
+
+.gallery-track{
+
+    display:flex;
 
     gap:25px;
 
-    margin-top:60px;
+    width:max-content;
+
+    animation:galleryScroll 40s linear infinite;
 
 }
 
-.gallery-grid img{
+.gallery-slider:hover .gallery-track{
 
-    width:100%;
+    animation-play-state:paused;
+
+}
+
+.gallery-track img{
+
+    width:380px;
 
     height:260px;
 
@@ -4090,19 +4144,19 @@ GALLERY PREVIEW
 
     transition:.35s;
 
+    flex-shrink:0;
+
 }
 
-.gallery-grid img:hover{
+.gallery-track img:hover{
 
-    transform:scale(1.05);
+    transform:translateY(-8px) scale(1.04);
 
 }
 
 .gallery-button{
 
     text-align:center;
-
-    margin-top:50px;
 
 }
 

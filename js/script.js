@@ -930,20 +930,5 @@ window.addEventListener("load",()=>{
 
 });
 
-
-
-/*==========================================
-IMAGE FADE-IN
-==========================================*/
-
-document.querySelectorAll("img").forEach(img=>{
-
-    img.addEventListener("load",()=>{
-
-        img.classList.add("loaded");
-
-    });
-
-});
 });
 

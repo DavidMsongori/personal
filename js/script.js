@@ -1,15 +1,24 @@
-/*=========================================================
-DAVID MSONGORI WEBSITE
-Main JavaScript
-=========================================================*/
+/*==========================================================
+ DAVID MSONGORI WEBSITE
+ Version 2.0
+==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*=========================================
-    HEADER SCROLL
-    =========================================*/
+    /*==========================================
+      ELEMENTS
+    ==========================================*/
 
     const header = document.querySelector(".header");
+    const hamburger = document.querySelector(".hamburger");
+    const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+
+
+    /*==========================================
+      HEADER SCROLL
+    ==========================================*/
 
     if (header) {
 
@@ -30,119 +39,123 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*=========================================
-    MOBILE MENU
-    =========================================*/
 
-    const hamburger = document.querySelector(".hamburger");
+    /*==========================================
+      MOBILE MENU
+    ==========================================*/
 
-    const navbar = document.querySelector(".navbar");
+    function openMenu() {
+
+        hamburger.classList.add("active");
+        navbar.classList.add("active");
+        document.body.classList.add("menu-open");
+
+    }
+
+    function closeMenu() {
+
+        hamburger.classList.remove("active");
+        navbar.classList.remove("active");
+        document.body.classList.remove("menu-open");
+
+    }
 
     if (hamburger && navbar) {
 
         hamburger.addEventListener("click", () => {
 
-            hamburger.classList.toggle("active");
+            if (navbar.classList.contains("active")) {
 
-            navbar.classList.toggle("active");
+                closeMenu();
 
-            document.body.classList.toggle("menu-open");
+            } else {
 
-        });
+                openMenu();
 
-        document.querySelectorAll(".nav-links a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                hamburger.classList.remove("active");
-
-                navbar.classList.remove("active");
-
-                document.body.classList.remove("menu-open");
-
-            });
+            }
 
         });
 
     }
 
 
-    /*=========================================
-    HERO ANIMATION
-    =========================================*/
 
-    const hero = document.querySelector(".hero-content");
+    /*==========================================
+      CLOSE MENU WHEN LINK IS CLICKED
+    ==========================================*/
 
-    if (hero) {
+    navLinks.forEach(link => {
 
-        hero.style.opacity = "0";
+        link.addEventListener("click", () => {
 
-        hero.style.transform = "translateY(30px)";
-
-        setTimeout(() => {
-
-            hero.style.transition = "all 1s ease";
-
-            hero.style.opacity = "1";
-
-            hero.style.transform = "translateY(0)";
-
-        }, 300);
-
-    }
-
-
-    /*=========================================
-    COUNTERS
-    =========================================*/
-
-    const counters = document.querySelectorAll(".counter");
-
-    if (counters.length > 0) {
-
-        const observer = new IntersectionObserver(entries => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) return;
-
-                const counter = entry.target;
-
-                const target = Number(counter.dataset.target);
-
-                let current = 0;
-
-                const increment = Math.max(1, target / 100);
-
-                function updateCounter() {
-
-                    current += increment;
-
-                    if (current < target) {
-
-                        counter.textContent = Math.floor(current).toLocaleString();
-
-                        requestAnimationFrame(updateCounter);
-
-                    } else {
-
-                        counter.textContent = target.toLocaleString() + "+";
-
-                    }
-
-                }
-
-                updateCounter();
-
-                observer.unobserve(counter);
-
-            });
+            closeMenu();
 
         });
 
-        counters.forEach(counter => observer.observe(counter));
+    });
 
-    }
 
+
+    /*==========================================
+      CLICK OUTSIDE TO CLOSE
+    ==========================================*/
+
+    document.addEventListener("click", (e) => {
+
+        if (
+
+            navbar &&
+            hamburger &&
+            navbar.classList.contains("active") &&
+
+            !navbar.contains(e.target) &&
+            !hamburger.contains(e.target)
+
+        ) {
+
+            closeMenu();
+
+        }
+
+    });
+
+
+
+    /*==========================================
+      ESC KEY CLOSES MENU
+    ==========================================*/
+
+    document.addEventListener("keydown", (e) => {
+
+        if (e.key === "Escape") {
+
+            closeMenu();
+
+        }
+
+    });
+
+
+
+    /*==========================================
+      ACTIVE PAGE
+    ==========================================*/
+
+    const currentPage = location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        const href = link.getAttribute("href");
+
+        if (href === currentPage || (currentPage === "" && href === "index.html")) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
+

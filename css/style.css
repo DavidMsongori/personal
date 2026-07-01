@@ -3175,6 +3175,12 @@ section{
 
 }
 
+.gallery-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
 /*==========================
 Mobile
 ==========================*/
@@ -3320,6 +3326,24 @@ section{
 .impact-grid{
 
     grid-template-columns:1fr;
+
+}
+
+.gallery-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.about-cta h2{
+
+    font-size:38px;
+
+}
+
+.about-cta-buttons{
+
+    flex-direction:column;
 
 }
 /*==========================
@@ -4082,3 +4106,59 @@ GALLERY PREVIEW
 
 }
 
+/*==========================================================
+ABOUT CTA
+==========================================================*/
+
+.about-cta{
+
+    background:linear-gradient(
+        135deg,
+        #08192D,
+        #0A2342,
+        #12385F
+    );
+
+    text-align:center;
+
+}
+
+.about-cta-container{
+
+    max-width:900px;
+
+}
+
+.about-cta h2{
+
+    color:white;
+
+    font-size:52px;
+
+    margin:25px 0;
+
+}
+
+.about-cta p{
+
+    color:#ddd;
+
+    max-width:750px;
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+}
+
+.about-cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}

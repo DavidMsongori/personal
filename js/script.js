@@ -462,6 +462,385 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+ /*==========================================
+  GALLERY LIGHTBOX
+==========================================*/
+
+const galleryImages = document.querySelectorAll(".gallery-track img, .gallery-grid img");
+
+if (galleryImages.length) {
+
+    // Create Lightbox
+
+    const lightbox = document.createElement("div");
+
+    lightbox.className = "lightbox";
+
+    lightbox.innerHTML = `
+
+        <span class="lightbox-close">&times;</span>
+
+        <span class="lightbox-prev">&#10094;</span>
+
+        <img class="lightbox-image" src="" alt="Gallery Image">
+
+        <span class="lightbox-next">&#10095;</span>
+
+    `;
+
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector(".lightbox-image");
+
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+
+    const prevBtn = lightbox.querySelector(".lightbox-prev");
+
+    const nextBtn = lightbox.querySelector(".lightbox-next");
+
+    let currentIndex = 0;
+
+    function showImage(index){
+
+        currentIndex = index;
+
+        lightboxImg.src = galleryImages[currentIndex].src;
+
+        lightbox.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+    galleryImages.forEach((img,index)=>{
+
+        img.addEventListener("click",()=>{
+
+            showImage(index);
+
+        });
+
+    });
+
+    closeBtn.addEventListener("click",()=>{
+
+        lightbox.classList.remove("show");
+
+        document.body.style.overflow="";
+
+    });
+
+    lightbox.addEventListener("click",(e)=>{
+
+        if(e.target===lightbox){
+
+            lightbox.classList.remove("show");
+
+            document.body.style.overflow="";
+
+        }
+
+    });
+
+    nextBtn.addEventListener("click",()=>{
+
+        currentIndex++;
+
+        if(currentIndex>=galleryImages.length){
+
+            currentIndex=0;
+
+        }
+
+        showImage(currentIndex);
+
+    });
+
+    prevBtn.addEventListener("click",()=>{
+
+        currentIndex--;
+
+        if(currentIndex<0){
+
+            currentIndex=galleryImages.length-1;
+
+        }
+
+        showImage(currentIndex);
+
+    });
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(!lightbox.classList.contains("show")) return;
+
+        if(e.key==="Escape"){
+
+            lightbox.classList.remove("show");
+
+            document.body.style.overflow="";
+
+        }
+
+        if(e.key==="ArrowRight"){
+
+            nextBtn.click();
+
+        }
+
+        if(e.key==="ArrowLeft"){
+
+            prevBtn.click();
+
+        }
+
+    });
+
+}
+
+
+
+/*==========================================
+  LAZY LOADING
+==========================================*/
+
+const lazyImages=document.querySelectorAll("img");
+
+const lazyObserver=new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const img=entry.target;
+
+            img.loading="lazy";
+
+            lazyObserver.unobserve(img);
+
+        }
+
+    });
+
+});
+
+lazyImages.forEach(img=>{
+
+    lazyObserver.observe(img);
+
+});
+
+ /*==========================================
+  CONTACT FORM VALIDATION
+==========================================*/
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const inputs = contactForm.querySelectorAll("input, textarea, select");
+
+        let valid = true;
+
+        inputs.forEach(input => {
+
+            input.style.borderColor = "#ddd";
+
+            if (input.hasAttribute("required") && input.value.trim() === "") {
+
+                input.style.borderColor = "#e63946";
+
+                valid = false;
+
+            }
+
+        });
+
+        const email = contactForm.querySelector('input[type="email"]');
+
+        if (email && email.value.trim() !== "") {
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email.value.trim())) {
+
+                email.style.borderColor = "#e63946";
+
+                valid = false;
+
+            }
+
+        }
+
+        const phone = contactForm.querySelector('input[type="tel"]');
+
+        if (phone && phone.value.trim() !== "") {
+
+            const phoneRegex = /^[0-9+\-\s()]{7,20}$/;
+
+            if (!phoneRegex.test(phone.value.trim())) {
+
+                phone.style.borderColor = "#e63946";
+
+                valid = false;
+
+            }
+
+        }
+
+        if (!valid) {
+
+            showToast("Please complete all required fields correctly.", "error");
+
+            return;
+
+        }
+
+        showToast("Your message has been prepared successfully!", "success");
+
+        contactForm.reset();
+
+    });
+
+}
+
+
+
+/*==========================================
+  FAQ ACCORDION
+==========================================*/
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+    const question = item.querySelector("h3");
+
+    if (!question) return;
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach(other => {
+
+            if (other !== item) {
+
+                other.classList.remove("active");
+
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+
+/*==========================================
+  TOAST NOTIFICATION
+==========================================*/
+
+function showToast(message, type = "success") {
+
+    const toast = document.createElement("div");
+
+    toast.className = `toast ${type}`;
+
+    toast.innerHTML = message;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+
+        toast.classList.add("show");
+
+    }, 100);
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 300);
+
+    }, 3500);
+
+}
+
+
+
+/*==========================================
+  SCROLL TO TOP BUTTON
+==========================================*/
+
+const topButton = document.createElement("button");
+
+topButton.className = "scroll-top";
+
+topButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+
+document.body.appendChild(topButton);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        topButton.classList.add("show");
+
+    } else {
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+topButton.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+
+/*==========================================
+  SMOOTH SCROLL
+==========================================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+});
  
 });
 

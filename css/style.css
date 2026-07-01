@@ -4992,3 +4992,338 @@ font-size:38px;
 }
 
 }
+
+/*==========================================================
+FAQ
+==========================================================*/
+
+.faq-item{
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+}
+
+.faq-item p{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    margin:0;
+
+}
+
+.faq-item.active p{
+
+    max-height:300px;
+
+    margin-top:15px;
+
+}
+
+
+
+/*==========================================================
+TOAST
+==========================================================*/
+
+.toast{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    padding:18px 25px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.3s;
+
+    z-index:99999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.toast.success{
+
+    background:#2E8B57;
+
+}
+
+.toast.error{
+
+    background:#C62828;
+
+}
+
+
+
+/*==========================================================
+SCROLL TO TOP
+==========================================================*/
+
+.scroll-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#111;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.scroll-top:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================================================
+READING PROGRESS
+==========================================================*/
+
+.reading-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0;
+
+    height:4px;
+
+    background:var(--accent);
+
+    z-index:99999;
+
+}
+
+
+
+/*==========================================================
+THEME BUTTON
+==========================================================*/
+
+.theme-toggle{
+
+    position:fixed;
+
+    left:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:#111;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    z-index:9999;
+
+    transition:.3s;
+
+}
+
+.theme-toggle:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/*==========================================================
+PAGE LOADER
+==========================================================*/
+
+.page-loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#08192D;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+
+    transition:.5s;
+
+}
+
+.page-loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+
+/*==========================================================
+IMAGE LOADING
+==========================================================*/
+
+img{
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+}
+
+img.loaded{
+
+    opacity:1;
+
+}
+
+
+
+/*==========================================================
+DARK MODE
+==========================================================*/
+
+body.dark{
+
+    background:#0b1320;
+
+    color:#e5e5e5;
+
+}
+
+body.dark section{
+
+    background:#0f1726 !important;
+
+}
+
+body.dark .profile-card,
+
+body.dark .project-card,
+
+body.dark .impact-card,
+
+body.dark .vision-card,
+
+body.dark .recognition-card,
+
+body.dark .contact-form,
+
+body.dark .faq-item,
+
+body.dark .education-item{
+
+    background:#162234;
+
+    color:#fff;
+
+}
+
+body.dark h1,
+
+body.dark h2,
+
+body.dark h3,
+
+body.dark h4{
+
+    color:#fff;
+
+}
+
+body.dark p,
+
+body.dark span,
+
+body.dark li{
+
+    color:#cbd5e1;
+
+}
+
+body.dark input,
+
+body.dark textarea,
+
+body.dark select{
+
+    background:#1d2b3d;
+
+    color:white;
+
+    border-color:#2f435d;
+
+}
+

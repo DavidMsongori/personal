@@ -1,14 +1,22 @@
 async function loadComponent(id, file) {
 
-    const element = document.getElementById(id);
+    const container = document.getElementById(id);
 
-    if (!element) return;
+    if (!container) return;
 
-    const response = await fetch(file);
+    try {
 
-    const html = await response.text();
+        const response = await fetch(file);
 
-    element.innerHTML = html;
+        if (!response.ok) throw new Error(`Failed to load ${file}`);
+
+        container.innerHTML = await response.text();
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
 
 }
 
@@ -17,5 +25,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadComponent("header", "components/header.html");
 
     await loadComponent("footer", "components/footer.html");
+
+    // Initialize your existing script after components exist
+    if (typeof initNavigation === "function") {
+        initNavigation();
+    }
 
 });

@@ -2796,7 +2796,39 @@ img{
 
 }
 
+@keyframes galleryLeft{
 
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+
+
+@keyframes galleryRight{
+
+    from{
+
+        transform:translateX(-50%);
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
+}
 
 /*==========================================================
 38. ANIMATION CLASSES
@@ -3203,6 +3235,14 @@ section{
 
 }
 
+.gallery-track img{
+
+    width:300px;
+
+    height:210px;
+
+}
+
 /*==========================
 Mobile
 ==========================*/
@@ -3380,6 +3420,26 @@ section{
     width:250px;
 
     height:180px;
+
+}
+
+.gallery-track{
+
+    gap:18px;
+
+}
+
+.gallery-track img{
+
+    width:230px;
+
+    height:170px;
+
+}
+
+.gallery-slider{
+
+    margin:20px 0;
 
 }
 /*==========================
